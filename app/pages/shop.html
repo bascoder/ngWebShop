@@ -16,18 +16,22 @@ Order by:
         Brand
     </button>
     <button type="button" class="btn btn-default" ng-click="order='age'">
-        <span ng-if="order=='age'" class="glyphicon glyphicon-star"></span>
+        <span ng-if="order=='age'" class="glyphicon glyphicon-menu-down"></span>
         Age
     </button>
     <button type="button" class="btn btn-default" ng-click="order='founder.first'">
-        <span ng-if="order=='founder.first'" class="glyphicon glyphicon-star"></span>
+        <span ng-if="order=='founder.first'" class="glyphicon glyphicon-menu-down"></span>
         Name
+    </button>
+    <button type="button" class="btn btn-default" ng-click="order=''">
+        <span ng-if="order==''" class="glyphicon glyphicon-remove"></span>
+        None
     </button>
 </div>
 <div class="row">
-    <div class="col-md-6 col-lg-4" ng-repeat="product in products | filter : filter | orderBy : order">
+    <div class="col-md-6 col-lg-4 well" ng-repeat="product in products | filter : filter | orderBy : order">
         <div class="row">
-            <div class="col-md-9 col-lg-6">
+            <div class="col-sm-9 col-lg-6">
                 <h3 ng-bind="product.brand"></h3>
                 Made by:<br/>
                 <i>{{product.founder.first}} {{product.founder.last}}</i><br/>
@@ -36,7 +40,7 @@ Order by:
                 Age: {{humanizeDuration(product.age)}}<br/>
                 RRP: {{product.balance | currency : '€'}}
             </div>
-            <div class="col-md-3 col-lg-6">
+            <div class="col-sm-3 col-lg-6">
                 <img ng-src="{{product.picture}}" class="img-responsive"/>
             </div>
         </div>
