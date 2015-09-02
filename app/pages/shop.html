@@ -1,10 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<div class="alert alert-danger" ng-show="!!errorMessage">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <strong ng-bind="errorMessage"></strong>
+</div>
 
-</body>
-</html>
+<label>
+    Filter
+    <input type="text" class="form-control" ng-model="filter.brand" placeholder="brand"/>
+    <input type="text" class="form-control" ng-model="filter.color" placeholder="colour"/>
+</label>
+
+Order by:
+<div class="btn-group" role="group" aria-label="order by">
+    <button type="button" class="btn btn-default" ng-click="order='brand'">
+        <span ng-if="order=='brand'" class="glyphicon glyphicon-menu-down"></span>
+        Brand
+    </button>
+    <button type="button" class="btn btn-default" ng-click="order='age'">
+        <span ng-if="order=='age'" class="glyphicon glyphicon-star"></span>
+        Age
+    </button>
+    <button type="button" class="btn btn-default" ng-click="order='founder.first'">
+        <span ng-if="order=='founder.first'" class="glyphicon glyphicon-star"></span>
+        Name
+    </button>
+</div>
+<div class="row">
+    <div class="col-md-6 col-lg-4" ng-repeat="product in products | filter : filter | orderBy : order">
+        <div class="row">
+            <div class="col-md-9 col-lg-6">
+                <h3 ng-bind="product.brand"></h3>
+                Made by:<br/>
+                <i>{{product.founder.first}} {{product.founder.last}}</i><br/>
+
+                Colour: {{product.color}}<br/>
+                Age: {{humanizeDuration(product.age)}}<br/>
+                RRP: {{product.balance | currency : '€'}}
+            </div>
+            <div class="col-md-3 col-lg-6">
+                <img ng-src="{{product.picture}}" class="img-responsive"/>
+            </div>
+        </div>
+    </div>
+</div>
