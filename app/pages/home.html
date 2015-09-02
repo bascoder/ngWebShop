@@ -1,0 +1,11 @@
+<div>
+    <h1>Hi {{name}}, Welcome on this web shop!</h1>
+    <p>
+        The current time is {{home.currentTime() | date : 'HH:mm:ss Z'}}
+        <br />
+        <label>
+            Your name
+            <input type="text" ng-model="name" class="form-control"/>
+        </label>
+    </p>
+</div>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="shopApp" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Client Side Web Shop</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="stylesheets/app.css">
+
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+<nav-bar></nav-bar>
+<div class="container">
+
+    <!-- Inject view -->
+    <div ng-view></div>
+
+    <footer>
+        <hr />
+        Client side web shop powered by AngularJS
+    </footer>
+</div>
+
+<!-- Libraries -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+
+<!-- Angular App -->
+<script src="js/app.js"></script>
+<script src="js/controllers/HomeController.js"></script>
+<script src="js/controllers/AboutController.js"></script>
+<script src="js/controllers/ShopController.js"></script>
+<script src="js/directives/NavBarDirective.js"></script>
+
+</body>
+</html>
