@@ -2,7 +2,7 @@
   "name": "ngWebShop",
   "description": "Mini project to practise AngularJS",
   "version": "0.0.0",
-  "homepage": "https://github.com/bascoder/ngWebShopd",
+  "homepage": "https://github.com/bascoder/ngWebShop",
   "license": "MIT",
   "private": true,
   "dependencies": {

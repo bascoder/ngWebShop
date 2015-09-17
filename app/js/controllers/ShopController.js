@@ -4,22 +4,11 @@
   var app = angular.module('shopApp');
 
   app.controller('ShopController',
-    ['$scope', '$http', '$log', '$rootScope', '$timeout', ShopController]);
+    ['$scope', '$http', '$log', '$rootScope', '$timeout', 'placeholderProduct',
+      ShopController]);
 
-  function ShopController($scope, $http, $log, $rootScope, $timeout) {
-    var placeholderProduct = {
-      "brand": "Placeholder",
-      "founder": {
-        "last": "Rivera",
-        "first": "Rose"
-      },
-      "color": "green",
-      "age": 20,
-      "picture": "http://lorempixel.com/100/100/sports?_=147",
-      "balance": "1530.4",
-      "id": 47
-    };
 
+  function ShopController($scope, $http, $log, $rootScope, $timeout, placeholderProduct) {
     $scope.products = [placeholderProduct];
     $scope.errorMessage = false;
 
